@@ -1,5 +1,5 @@
 <script setup>
-
+import {Link} from '@inertiajs/vue3';
 </script>
 
 <template>
@@ -48,6 +48,15 @@
                             <i class="menu-icon flaticon-home"></i>
                             <span class="menu-text">Dashboard</span>
                         </a>
+                    </li>
+                    <li class="menu-item" aria-haspopup="true">
+                        <Link
+                            :href="route('admin.categories.index')"
+                            class="menu-link">
+                            <i class="menu-icon flaticon-home"></i>
+                            <span class="menu-text">Categories</span>
+                        </Link>
+
                     </li>
                 </ul>
                 <!--end::Menu Nav-->
