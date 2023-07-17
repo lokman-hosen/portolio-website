@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\BusinessCategoryController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
@@ -39,6 +40,7 @@ Route::middleware('auth')->group(function () {
 Route::prefix('admin')->name('admin.')->middleware(['web', 'auth'])->group(function () {
     Route::resources([
         'categories' => CategoryController::class,
+        'business-categories' => BusinessCategoryController::class,
     ]);
 });
 
