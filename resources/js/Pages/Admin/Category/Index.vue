@@ -43,49 +43,16 @@ defineProps({
                         </div>
                     </div>
                     <div class="card-body">
-                        <Table :tableHeads="tableHeads" :data="categories"/>
-<!--                        <table class="table table-bordered">-->
-<!--                            <thead>-->
-<!--                            <tr>-->
-<!--                                <th scope="col">{{tableHeads.sr_no}}</th>-->
-<!--                                <th scope="col">{{tableHeads.name}}</th>-->
-<!--                                <th scope="col">{{tableHeads.status}}</th>-->
-<!--                                <th scope="col">{{tableHeads.action}}</th>-->
-<!--                            </tr>-->
-<!--                            </thead>-->
-<!--                            <tbody>-->
-<!--                            <tr  key="{{category.id}}" v-for="category in categories">-->
-<!--                                <th scope="row">{{category.id}}</th>-->
-<!--                                <td>{{category.name}}</td>-->
-<!--                                <td>-->
-<!--                                <span class="label label-inline label-light-primary font-weight-bold">-->
-<!--                                    Pending-->
-<!--                                </span>-->
-<!--                                </td>-->
-<!--                                <td>Action</td>-->
-<!--                            </tr>-->
-<!--&lt;!&ndash;                            <tr>&ndash;&gt;-->
-<!--&lt;!&ndash;                                <th scope="row">2</th>&ndash;&gt;-->
-<!--&lt;!&ndash;                                <td>Ana</td>&ndash;&gt;-->
-<!--&lt;!&ndash;                                <td>Jacobs</td>&ndash;&gt;-->
-<!--&lt;!&ndash;                                <td>&ndash;&gt;-->
-<!--&lt;!&ndash;                                <span class="label label-inline label-light-success font-weight-bold">&ndash;&gt;-->
-<!--&lt;!&ndash;                                    Approved&ndash;&gt;-->
-<!--&lt;!&ndash;                                </span>&ndash;&gt;-->
-<!--&lt;!&ndash;                                </td>&ndash;&gt;-->
-<!--&lt;!&ndash;                            </tr>&ndash;&gt;-->
-<!--&lt;!&ndash;                            <tr>&ndash;&gt;-->
-<!--&lt;!&ndash;                                <th scope="row">3</th>&ndash;&gt;-->
-<!--&lt;!&ndash;                                <td>Larry</td>&ndash;&gt;-->
-<!--&lt;!&ndash;                                <td>Pettis</td>&ndash;&gt;-->
-<!--&lt;!&ndash;                                <td>&ndash;&gt;-->
-<!--&lt;!&ndash;                                <span class="label label-inline label-light-danger font-weight-bold">&ndash;&gt;-->
-<!--&lt;!&ndash;                                    New&ndash;&gt;-->
-<!--&lt;!&ndash;                                </span>&ndash;&gt;-->
-<!--&lt;!&ndash;                                </td>&ndash;&gt;-->
-<!--&lt;!&ndash;                            </tr>&ndash;&gt;-->
-<!--                            </tbody>-->
-<!--                        </table>-->
+                        <Table :tableHeads="tableHeads">
+                            <tr v-for="category in categories">
+                                <th scope="row">1</th>
+                                <td>{{category.name}}</td>
+                                <td>{{category.status}}</td>
+                                <td>
+                                    <a class="btn btn-sm btn-info"> Edit</a>
+                                </td>
+                            </tr>
+                        </Table>
                     </div>
                 </div>
                 <!--end::Card-->

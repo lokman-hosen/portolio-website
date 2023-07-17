@@ -11,23 +11,14 @@ defineProps({
 </script>
 
 <template>
-    <table class="table table-bordered">
+    <table class="table">
         <thead>
         <tr>
-            <th v-for="tableHead in tableHeads" scope="col">{{tableHead}}</th>
+            <th scope="col" v-for="tableHead in tableHeads">{{tableHead}}</th>
         </tr>
         </thead>
         <tbody>
-            <tr v-for="(value,index) in data">
-<!--                <th v-for="item in 3">{{value.tableHeads}}</th>-->
-                <th>{{value.id}}</th>
-                <th>{{value.name}}</th>
-                <th>{{value.status}}</th>
-<!--                <th v-for="item in 2" scope="row">-->
-<!--                    <span v-if=" tableHeads[index+1] == 'name' ">{{ value.name}}&#45;&#45;{{tableHeads[index+1]}}</span>-->
-<!--                </th>-->
-            </tr>
-
+        <slot></slot>
         </tbody>
     </table>
 </template>

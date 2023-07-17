@@ -18,12 +18,7 @@ class CategoryController extends Controller
     {
         return Inertia::render('Admin/Category/Index', [
             'pageTitle' => 'Category List',
-            'tableHeads' => [
-                1 => 'id',
-                2 => 'name',
-                3 =>'status',
-            ],
-            //'columns' => ['id','name', 'status'],
+            'tableHeads' => ['SR. No', 'Name', 'Status', 'Action',],
             'categories' => Category::all(),
         ]);
     }
