@@ -3,19 +3,23 @@ import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import {Head, Link, useForm} from '@inertiajs/vue3';
 import PrimaryButton from '@/Components/Admin/Common/PrimaryButton.vue';
 
-defineProps({
+const props = defineProps({
     pageTitle:{
         type: String,
+    },
+    businessCategory: {
+        type: Object,
+        default: () => ({}),
     },
 });
 
 const form = useForm({
-    name: '',
-    status: 1,
+    name: props.businessCategory.name,
+    status: props.businessCategory.status,
 });
 
 const submit = () => {
-    form.post(route('admin.business-categories.store'), {
+    form.patch(route('admin.business-categories.update', props.businessCategory.id), {
         onFinish: () => form.reset(),
     });
 };
@@ -66,7 +70,7 @@ const submit = () => {
                                             <option value="1">Active</option>
                                             <option value="0">Inactive</option>
                                         </select>
-                                        <div v-if="form.errors.status" class="invalid-feedback">{{form.errors.status}}</div>
+                                        <div v-if="form.errors.status" class="text-danger">{{form.errors.status}}</div>
                                     </div>
                                 </div>
 

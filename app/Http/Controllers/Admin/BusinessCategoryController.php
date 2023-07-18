@@ -48,7 +48,7 @@ class BusinessCategoryController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreBusinessCategoryRequest $request): RedirectResponse
     {
         $category = $this->businessCategoryService->create($request->all());
         if ($category) {
@@ -70,13 +70,14 @@ class BusinessCategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(BusinessCategory $businessCategory) : view
+    public function edit(BusinessCategory $businessCategory) : Response
     {
         $data = [
             'pageTitle' => 'Business Category Edit',
             'businessCategory' => $businessCategory,
         ];
-        return view(self::moduleDirectory.'edit', $data);
+
+        return Inertia::render(self::moduleDirectory.'Edit', $data);
     }
 
     /**

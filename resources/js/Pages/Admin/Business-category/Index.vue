@@ -55,7 +55,10 @@ defineProps({
                                     <Status :status="category.status"/>
                                 </td>
                                 <td>
-                                    <a class="btn btn-sm btn-info"> Edit</a>
+                                    <Link class="btn btn-sm btn-info"
+                                          :href="route('admin.business-categories.edit', category.id)"
+                                    > Edit</Link>
+
                                 </td>
                             </tr>
                         </Table>
