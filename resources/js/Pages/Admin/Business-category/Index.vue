@@ -1,6 +1,6 @@
 <script setup>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
-import { Head } from '@inertiajs/vue3';
+import { Link,Head } from '@inertiajs/vue3';
 import Table from "@/Components/Admin/Table/Table.vue";
 import Status from "@/Components/Admin/Common/Status.vue";
 import FlashMessage from "@/Components/Admin/Common/FlashMessage.vue";

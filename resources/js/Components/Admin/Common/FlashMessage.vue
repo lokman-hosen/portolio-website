@@ -30,4 +30,12 @@ import {ref} from "vue";
 .close-btn:hover{
     cursor: pointer;
 }
+.alert-success {
+    background-color: #d1e7dd;
+    border-color: #a3cfbb;
+    color: #0a3622;
+    padding: 1rem;
+    font-size: 18px;
+    text-align: center;
+}
 </style>
