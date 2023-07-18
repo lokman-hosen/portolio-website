@@ -1,9 +1,10 @@
 <script setup>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
-import { Head, Link } from '@inertiajs/vue3';
+import { Head } from '@inertiajs/vue3';
 import Table from "@/Components/Admin/Table/Table.vue";
 import Status from "@/Components/Admin/Common/Status.vue";
 import FlashMessage from "@/Components/Admin/Common/FlashMessage.vue";
+import Pagination from "@/Components/Admin/Common/Pagination.vue";
 
 defineProps({
     pageTitle:{
@@ -47,7 +48,7 @@ defineProps({
                     <div class="card-body">
                         <FlashMessage/>
                         <Table :tableHeads="tableHeads">
-                            <tr v-for="(category,index) in businessCategories">
+                            <tr v-for="(category,index) in businessCategories.data">
                                 <th scope="row">{{index+1}}</th>
                                 <td>{{category.name}}</td>
                                 <td>
@@ -58,6 +59,7 @@ defineProps({
                                 </td>
                             </tr>
                         </Table>
+                        <Pagination :links="businessCategories.links"/>
                     </div>
                 </div>
                 <!--end::Card-->

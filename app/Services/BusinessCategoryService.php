@@ -23,7 +23,7 @@ class BusinessCategoryService extends BaseService
 
     public function getAllData()
     {
-        return $this->businessCategory->get();
+        return $this->businessCategory->paginate(10);
     }
 
     public function listByStatus()
