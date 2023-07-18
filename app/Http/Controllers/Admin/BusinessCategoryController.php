@@ -34,26 +34,21 @@ class BusinessCategoryController extends Controller
         return Inertia::render(self::moduleDirectory.'Index', $data);
     }
 
-    public function getData(Request $request): JsonResponse
-    {
-        return $this->businessCategoryService->getAllData($request);
-    }
-
     /**
      * Show the form for creating a new resource.
      */
-    public function create() : view
+    public function create() : Response
     {
         $data = [
             'pageTitle' => 'Business Category Create',
         ];
-        return view(self::moduleDirectory.'create', $data);
+        return Inertia::render(self::moduleDirectory.'Create', $data);
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreBusinessCategoryRequest $request): RedirectResponse
+    public function store(Request $request)
     {
         $category = $this->businessCategoryService->create($request->all());
         if ($category) {

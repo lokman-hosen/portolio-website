@@ -51,10 +51,10 @@ import {Link} from '@inertiajs/vue3';
                     </li>
                     <li class="menu-item" aria-haspopup="true">
                         <Link
-                            :href="route('admin.categories.index')"
+                            :href="route('admin.business-categories.index')"
                             class="menu-link">
                             <i class="menu-icon flaticon-home"></i>
-                            <span class="menu-text">Categories</span>
+                            <span class="menu-text">Business Categories</span>
                         </Link>
 
                     </li>

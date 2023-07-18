@@ -1,5 +1,5 @@
 import './bootstrap';
-import '../css/app.css';
+//import '../css/app.css';
 import '../css/plugins.bundle.css';
 import '../css/style.bundle.min.css';
 import '../css/dark.css';

@@ -3,6 +3,7 @@ import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { Head, Link } from '@inertiajs/vue3';
 import Table from "@/Components/Admin/Table/Table.vue";
 import Status from "@/Components/Admin/Common/Status.vue";
+import FlashMessage from "@/Components/Admin/Common/FlashMessage.vue";
 
 defineProps({
     pageTitle:{
@@ -36,7 +37,7 @@ defineProps({
                         </div>
                         <div class="card-toolbar">
                             <Link
-                                :href="route('admin.categories.create')"
+                                :href="route('admin.business-categories.create')"
                                 class="btn btn-success">
                                 <i class="flaticon2-plus-1"></i> Add New
                             </Link>
@@ -44,6 +45,7 @@ defineProps({
                         </div>
                     </div>
                     <div class="card-body">
+                        <FlashMessage/>
                         <Table :tableHeads="tableHeads">
                             <tr v-for="(category,index) in businessCategories">
                                 <th scope="row">{{index+1}}</th>
